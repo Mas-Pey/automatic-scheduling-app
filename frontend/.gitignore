@@ -1,0 +1,44 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node modules & build output
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+# JetBrains IDE
+.idea
+# macOS
+.DS_Store
+# Windows / Visual Studio
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Vite / plugin cache
+.vite
+*.cache
+
+# TypeScript
+*.tsbuildinfo
+*.d.ts
+
+
