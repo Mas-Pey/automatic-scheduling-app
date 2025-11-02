@@ -1,17 +1,10 @@
 import { useState } from "react"
-import type { EventType, Schedule } from "../types"
+import type { EventType, Schedule, ScheduleParams } from "../types"
 
 export const useSchedule = () => {
     const [schedules, setSchedules] = useState<EventType[]>([])
 
-    const createSchedule = async (params: {
-        month: number
-        shift_per_day: number
-        open_hour: number
-        hour_shift: number
-        employee_per_shift: number
-        maximum_hour_per_week: number
-    }) => {
+    const createSchedule = async (params: ScheduleParams) => {
         try {
             const response = await fetch(
                 'http://127.0.0.1:3000/create-schedule', {

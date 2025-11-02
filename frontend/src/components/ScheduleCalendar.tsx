@@ -5,21 +5,14 @@ import {
     MonthlyDay,
     MonthlyNav
 } from "@zach.codes/react-calendar"
-import type { EventType } from "../types"
+import type { EventType, ScheduleParams } from "../types"
 import { useState } from "react"
 
 interface ScheduleCalendarProps {
     currentMonth: Date
     setCurrentMonth: (date: Date) => void
     schedules: EventType[]
-    onGenerate: (params: {
-        month: number
-        shift_per_day: number
-        open_hour: number
-        hour_shift: number
-        employee_per_shift: number
-        maximum_hour_per_week: number
-    }) => void
+    onGenerate: (params: ScheduleParams) => void
 }
 
 export const ScheduleCalendar = ({
@@ -28,7 +21,7 @@ export const ScheduleCalendar = ({
     schedules,
     onGenerate
 }: ScheduleCalendarProps) => {
-    const [form, setForm] = useState({
+    const [form, setForm] = useState<ScheduleParams>({
         month: currentMonth.getMonth(),
         shift_per_day: 2,
         open_hour: 8,
