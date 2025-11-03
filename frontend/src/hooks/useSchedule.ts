@@ -1,8 +1,9 @@
 import { useState } from "react"
-import type { EventType, Schedule, ScheduleParams } from "../types"
+import type { EventType, Schedule, ScheduleParams, ScheduleSummary } from "../types"
 
 export const useSchedule = () => {
     const [schedules, setSchedules] = useState<EventType[]>([])
+    const [summary, setSummary] = useState<ScheduleSummary | null>(null)
 
     const createSchedule = async (params: ScheduleParams) => {
         try {
@@ -22,6 +23,8 @@ export const useSchedule = () => {
 
             const json = await response.json()
             console.log(json)
+            setSummary(json.summary)
+
             const mappedSchedules: EventType[] = json.schedules.flatMap((list: Schedule) =>
                 list.employees.map((emp: string) => ({
                     name: emp,
@@ -45,6 +48,7 @@ export const useSchedule = () => {
 
     return {
         schedules,
+        summary,
         createSchedule
     }
 }
