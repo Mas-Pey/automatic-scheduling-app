@@ -25,3 +25,24 @@ export interface ScheduleParams {
   employee_per_shift: number;
   maximum_hour_per_week: number;
 }
+
+export interface WeeklyHourBreakdown {
+  [week: string]: { [employee: string]: number }
+}
+
+export interface MonthlyHourBreakdown {
+  [employee: string]: number
+}
+
+export interface OverworkedEmployee {
+  name: string
+  totalHours: number
+  week: string
+}
+
+export interface ScheduleSummary {
+  median_of_weekly_hour: number
+  weekly_hour_breakdown: WeeklyHourBreakdown
+  monthly_hour_breakdown: MonthlyHourBreakdown
+  overworked_employees: OverworkedEmployee[]
+}
