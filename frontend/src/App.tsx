@@ -16,7 +16,7 @@ function App() {
     addEmployee,
     deleteEmployee
   } = useEmployees()
-  const { schedules, createSchedule } = useSchedule()
+  const { schedules, summary, createSchedule } = useSchedule()
 
   return (
     <div className='mx-auto max-w-5xl py-4'>
@@ -41,6 +41,7 @@ function App() {
         setCurrentMonth={setCurrentMonth}
         schedules={schedules}
         onGenerate={createSchedule}
+        summary={summary}
       />
     </div>
   );
