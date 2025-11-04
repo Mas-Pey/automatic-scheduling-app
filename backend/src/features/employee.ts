@@ -1,5 +1,5 @@
 import type { FastifyPluginAsync, FastifyReply, FastifyRequest } from "fastify"
-import fp, { fastifyPlugin } from 'fastify-plugin'
+import fp from 'fastify-plugin'
 import db from './db.ts'
 
 /**
@@ -21,7 +21,7 @@ interface EmployeeBody {
 const employeeRoutes: FastifyPluginAsync = async (fastify) => {
 
     fastify.get('/employees',
-        async (request, reply) => {
+        async () => {
             const stmt = db.prepare("SELECT * FROM employees").all()
             return {
                 employees: stmt
@@ -45,7 +45,7 @@ const employeeRoutes: FastifyPluginAsync = async (fastify) => {
 
     fastify.post<{ Body: EmployeeBody }>('/employee',
         async (request, reply) => {
-            if (typeof request.body.name !== "string") {
+            if (typeof request.body.name !== 'string' || request.body.name.trim() === '') {
                 return reply.status(400).send({
                     message: "Name must be a text"
                 })
@@ -69,11 +69,16 @@ const employeeRoutes: FastifyPluginAsync = async (fastify) => {
                     message: "Employee not found"
                 })
             }
+            if (typeof request.body.name !== 'string' || request.body.name.trim() === '') {
+                return reply.status(400).send({
+                    message: "Name must be a text"
+                })
+            }
             db.prepare("UPDATE employees SET name = ? WHERE id = ?").run(request.body.name, request.params.id)
             return {
-                employee: { 
-                    id: Number(request.params.id), 
-                    name: request.body.name 
+                employee: {
+                    id: Number(request.params.id),
+                    name: request.body.name
                 },
                 message: `Employee ID : ${request.params.id} successfully updated`
             }
@@ -87,7 +92,7 @@ const employeeRoutes: FastifyPluginAsync = async (fastify) => {
                 return reply.status(404).send({
                     message: "Employee not found"
                 })
-            } 
+            }
             return {
                 message: `Employee ID : ${request.params.id} successfully deleted`
             }
