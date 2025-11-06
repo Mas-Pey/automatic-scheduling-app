@@ -30,5 +30,3 @@ jobs:
     - name: Run tests
       run: npm test
       working-directory: ./backend
-    - name: List backend folder
-      run: ls -la ./backend
