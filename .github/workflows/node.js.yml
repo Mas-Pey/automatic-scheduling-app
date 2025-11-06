@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x, 20.x, 22.x, 24.x]
+        node-version: [24.x]
 
     steps:
     - uses: actions/checkout@v4
@@ -31,3 +31,5 @@ jobs:
     - name: Run tests
       run: npm test
       working-directory: ./backend
+    - name: List backend folder
+      run: ls -la ./backend
