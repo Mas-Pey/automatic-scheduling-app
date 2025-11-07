@@ -3,7 +3,7 @@ import type { Employee } from "../types"
 
 export const useEmployees = () => {
     const [employees, setEmployees] = useState<Employee[]>([])
-    const [showList, setShowList] = useState(false)
+    const [manageEmployee, setManageEmployee] = useState(false)
 
     const fetchEmployees = async () => {
         try {
@@ -18,7 +18,7 @@ export const useEmployees = () => {
 
             const json = await response.json()
             setEmployees(json.employees)
-            setShowList(true)
+            setManageEmployee(true)
 
         } catch (error: unknown) {
             if (error instanceof Error) {
@@ -121,11 +121,11 @@ export const useEmployees = () => {
 
     return {
         employees,
-        showList,
+        manageEmployee,
         fetchEmployees,
-        setShowList,
         updateEmployee,
         addEmployee,
-        deleteEmployee
+        deleteEmployee,
+        setManageEmployee
     }
 }
