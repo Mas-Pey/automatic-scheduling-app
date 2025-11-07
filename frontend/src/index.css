@@ -1,1 +1,54 @@
 @import "tailwindcss";
+
+body {
+    background: linear-gradient(to bottom, var(--color-pink-50), var(--color-blue-200));
+    font-family: monospace;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.calendar-wrapper .rc-bg-white {
+  background: transparent !important;
+}
+
+/* Overwrite Monthly Event Items */ 
+.calendar-wrapper .rc-flex {
+    gap: 1rem;
+    align-items: right;
+}
+
+.calendar-wrapper .rc-font-medium {
+    text-align: left;
+}
+
+/* Overwrite Event Items (Text)  */
+.calendar-wrapper .rc-text-gray-500 {
+    color: var(--color-pink-900);
+    font-size: 0.75rem;
+    text-align: right;
+}
+
+/* Overwrite Previous/Next Button */
+.calendar-wrapper .rc-cursor-pointer {
+    padding: 0.25rem 0.5rem;
+    border: 2px solid var(--color-blue-300);
+    border-radius: 0.25rem;
+}
+
+/* Overwrite Previous/Next Button Hover effect */
+.calendar-wrapper .rc-cursor-pointer:hover {
+    background-color: var(--color-pink-200);
+}
+
+/* Overwrite Month (Text) */
+.calendar-wrapper .rc-text-center {
+  text-decoration: underline;
+  text-decoration-color: var(--color-blue-200);
+  text-underline-offset: 3px;
+  color: var(--color-pink-600);
+  font-weight: 1000;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 1px var(--color-blue-300), 1px 1px 1px var(--color-blue-600);
+}
+
+
