@@ -38,7 +38,11 @@ It includes:
 
 ---
 
-## Screenshot
+## 🚀 Demo
+
+Try the live app here:  
+- **Frontend:** [https://automatic-scheduling.netlify.app/](https://automatic-scheduling.netlify.app/)  
+- **Backend (API):** [https://automatic-scheduling-api.fly.dev/](https://automatic-scheduling-api.fly.dev/)
 
 <p align="center">
   <img src="./frontend/public/ss.png" alt="Scheduler App Screenshot" width="700"/>
