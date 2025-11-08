@@ -1,6 +1,6 @@
 import type { FastifyPluginAsync, FastifyReply, FastifyRequest } from "fastify"
 import fp from 'fastify-plugin'
-import db from './db.ts'
+import db from './db.js'
 
 /**
  * TYPES 

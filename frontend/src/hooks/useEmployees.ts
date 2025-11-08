@@ -8,7 +8,7 @@ export const useEmployees = () => {
     const fetchEmployees = async () => {
         try {
             const response = await fetch(
-                'http://127.0.0.1:3000/employees',
+                'https://automatic-scheduling-api.fly.dev/employees',
             )
 
             if (!response.ok) {
@@ -32,7 +32,7 @@ export const useEmployees = () => {
     const updateEmployee = async (id: number, name: string) => {
         try {
             const response = await fetch(
-                `http://127.0.0.1:3000/employee/${id}`, {
+                `https://automatic-scheduling-api.fly.dev/employee/${id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
@@ -66,7 +66,7 @@ export const useEmployees = () => {
     const addEmployee = async (name: string) => {
         try {
             const response = await fetch(
-                'http://127.0.0.1:3000/employee', {
+                'https://automatic-scheduling-api.fly.dev/employee', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -99,7 +99,7 @@ export const useEmployees = () => {
     const deleteEmployee = async (id: number) => {
         try {
             const response = await fetch(
-                `http://127.0.0.1:3000/employee/${id}`, {
+                `https://automatic-scheduling-api.fly.dev/employee/${id}`, {
                     method: 'DELETE'
                 }
             )

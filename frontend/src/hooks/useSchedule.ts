@@ -8,7 +8,7 @@ export const useSchedule = () => {
     const createSchedule = async (params: ScheduleParams) => {
         try {
             const response = await fetch(
-                'http://127.0.0.1:3000/create-schedule', {
+                'https://automatic-scheduling-api.fly.dev/create-schedule', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

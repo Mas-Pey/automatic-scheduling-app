@@ -1,5 +1,5 @@
 import { test, type TestContext } from 'node:test'
-import { buildApp } from './server.ts'
+import { buildApp } from './server.js'
 import Database from 'better-sqlite3'
 import { 
     addHours, 
@@ -8,7 +8,7 @@ import {
     getEmployeeOnShift, 
     getMedianofWeeklyHours, 
     getOverworkedEmployees 
-} from './features/schedule.ts'
+} from './features/schedule.js'
 
 let employeeId = ''
 

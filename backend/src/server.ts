@@ -1,7 +1,7 @@
 import Fastify from 'fastify'
 import cors from '@fastify/cors'
-import employeeRoute from './features/employee.ts'
-import scheduleRoutes from './features/schedule.ts'
+import employeeRoute from './features/employee.js'
+import scheduleRoutes from './features/schedule.js'
 import type { Server } from 'https'
 import type { FastifyBaseLogger, FastifyHttpOptions, FastifyInstance } from 'fastify'
 
